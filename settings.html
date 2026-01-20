@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings • Roblox Safety Suite</title>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      color: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 14px;
+      width: 340px;
+    }
+
+    h2 {
+      color: #e53935;
+      margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .setting {
+      background: linear-gradient(135deg, #2a2a3a 0%, #3a3a4a 100%);
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      border: 1px solid #444;
+    }
+
+    label {
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      cursor: pointer;
+      accent-color: #e53935;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(90deg, #e53935, #c62828);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #c62828, #b71c1c);
+      box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+    }
+
+    .footer {
+      margin-top: 14px;
+      font-size: 11px;
+      color: #777;
+      text-align: center;
+      padding-top: 10px;
+      border-top: 1px solid #333;
+    }
+
+    a {
+      color: #90caf9;
+      text-decoration: none;
+      display: block;
+      margin-top: 10px;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #64b5f6;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>⚙️ SETTINGS</h2>
+
+  <div class="setting">
+    <label>
+      <input type="checkbox" id="showLowRisk" />
+      Show low-risk extensions
+    </label>
+  </div>
+
+  <div class="setting">
+    <label>
+      <input type="checkbox" id="autoScan" />
+      Auto-scan on browser start
+    </label>
+  </div>
+
+  <div class="setting">
+    <button id="clearHistory">🗑️ Clear Scan History</button>
+  </div>
+
+  <a href="popup.html">← Back to Main</a>
+
+  <div class="footer">
+    Roblox Safety Suite • Settings
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>

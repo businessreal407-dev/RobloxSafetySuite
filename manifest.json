@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Roblox Extension Safety Suite",
+  "version": "1.0",
+  "description": "Detects and warns about potentially malicious Roblox-related Chrome extensions.",
+  "permissions": ["management", "storage"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["modules/knownBad.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report a Suspicious Extension</title>
+
+  <style>
+    body {
+      background: #1c1c1c;
+      color: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 14px;
+      width: 320px;
+    }
+
+    h2 {
+      color: #e53935;
+      margin-top: 0;
+    }
+
+    .field {
+      margin-bottom: 12px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background: #2a2a2a;
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #e53935;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background: #c62828;
+    }
+
+    .error {
+      color: #ff6b6b;
+      font-size: 12px;
+      margin-top: 4px;
+      display: none;
+    }
+
+    a {
+      color: #90caf9;
+      text-decoration: none;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Report a Suspicious Extension</h2>
+
+  <div class="field">
+    <label>Extension Name</label>
+    <input type="text" id="extName" placeholder="Example: SearchBlox" />
+  </div>
+
+  <div class="field">
+    <label>Extension Link or ID</label>
+    <input type="text" id="extLink" placeholder="Paste Chrome Web Store link or ID" />
+    <div id="errorMsg" class="error">Invalid link or extension ID.</div>
+  </div>
+
+  <div class="field">
+    <label>Why is it suspicious?</label>
+    <textarea id="reason" rows="3" placeholder="Describe what seems wrong..."></textarea>
+  </div>
+
+  <button id="submitReport">Submit Report</button>
+
+  <a href="popup.html">← Back</a>
+
+  <script src="report.js"></script>
+</body>
+</html>

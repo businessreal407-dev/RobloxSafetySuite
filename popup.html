@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roblox Safety Suite</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        color: #f4f4f4;
+        padding: 14px;
+        width: 340px;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 22px;
+        margin-top: 0;
+        margin-bottom: 12px;
+        background: linear-gradient(90deg, #e53935, #ff6b6b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        letter-spacing: 0.5px;
+      }
+
+      .info {
+        background: rgba(229, 57, 53, 0.15);
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 13px;
+        margin-bottom: 14px;
+        line-height: 1.5;
+        border-left: 4px solid #e53935;
+        border-right: 1px solid rgba(229, 57, 53, 0.3);
+      }
+
+      .info strong {
+        color: #ff9800;
+      }
+
+      .risk-item {
+        background: linear-gradient(135deg, #2a2a3a 0%, #3a3a4a 100%);
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #444;
+        transition: all 0.2s ease;
+      }
+
+      .risk-item:hover {
+        border-color: #e53935;
+        box-shadow: 0 0 8px rgba(229, 57, 53, 0.2);
+      }
+
+      .risk-title {
+        font-weight: bold;
+        margin-bottom: 6px;
+        color: #fff;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .badge {
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 10px;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .low {
+        background: linear-gradient(90deg, #4caf50, #66bb6a);
+        box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+      }
+
+      .medium {
+        background: linear-gradient(90deg, #ff9800, #ffb74d);
+        box-shadow: 0 0 8px rgba(255, 152, 0, 0.3);
+      }
+
+      .high {
+        background: linear-gradient(90deg, #f44336, #ff6b6b);
+        box-shadow: 0 0 8px rgba(244, 67, 54, 0.4);
+      }
+
+      .reasons {
+        font-size: 12px;
+        margin-top: 8px;
+        color: #d4d4d4;
+        padding: 8px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        line-height: 1.6;
+      }
+
+      .recommendation {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #ffeb3b;
+        padding: 8px;
+        background: rgba(255, 235, 59, 0.1);
+        border-radius: 4px;
+        border-left: 3px solid #ffeb3b;
+      }
+
+      #rescan {
+        margin-top: 14px;
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(90deg, #e53935, #c62828);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+      }
+
+      #rescan:hover {
+        background: linear-gradient(90deg, #c62828, #b71c1c);
+        box-shadow: 0 6px 16px rgba(229, 57, 53, 0.5);
+        transform: translateY(-2px);
+      }
+
+      #rescan:active {
+        transform: translateY(0);
+      }
+
+      .settings {
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid #444;
+        font-size: 12px;
+        color: #aaa;
+      }
+
+      .settings strong {
+        color: #e53935;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .settings a {
+        color: #90caf9;
+        text-decoration: none;
+        display: block;
+        margin-top: 6px;
+        padding: 4px;
+        border-radius: 3px;
+        transition: all 0.2s ease;
+      }
+
+      .settings a:hover {
+        background: rgba(144, 202, 249, 0.1);
+        color: #64b5f6;
+        padding-left: 8px;
+      }
+
+      .footer {
+        margin-top: 14px;
+        font-size: 10px;
+        color: #666;
+        text-align: center;
+        border-top: 1px solid #333;
+        padding-top: 10px;
+      }
+
+      p {
+        margin: 0;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>🛡️ ROBLOX SAFETY SUITE</h2>
+
+    <div class="info">
+      Scans your installed extensions for
+      <strong>Roblox-related risks</strong> like fake Robux generators, exploit tools, or script injection.
+      <br /><br />
+      <strong>✓ No data is collected or sent anywhere.</strong>
+    </div>
+
+    <div id="extList"></div>
+
+    <button id="rescan">🔍 RESCAN EXTENSIONS</button>
+
+    <div class="settings">
+      <strong>⚙️ SETTINGS & TOOLS</strong>
+      <a href="settings.html">📋 Extension Settings</a>
+      <a href="knownbad.html">🚫 Known-Bad Extensions</a>
+      <a href="report.html">📝 Report Suspicious Extension</a>
+      <a href="reports.html">📊 View Your Reports</a>
+      <a href="https://forms.gle/JfvtfCWR289xEvdd7" target="_blank">📧 Send Report to Developer</a>
+    </div>
+
+    <div class="footer">
+      Built by Roblox players • Open-source • Transparent • v1.0
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
